@@ -41,15 +41,20 @@ php -S localhost:8000
 
 # Основные методы:
 
+Метод **GET**
+
+Запрашивает данные с сервера. По сути *ReadOnly*
+
 - [Документация](https://tools.ietf.org/html/rfc2068#section-5.1.1)
 
-Наиболее часто используемый - **GET**
-Запрашивает данные с сервера. По сути *ReadOnly*
+
 
 ```
 GET / HTTP /1.1
 Host: yandex.ru
 ```
+*request line*
+
 
 Типичный запрос браузера:
 
@@ -82,10 +87,15 @@ Last Name: <input type="text" name="last_name" /> <br />
 GET /foo.php?first_name=John&last_name=Doe&action=Submit HTTP/1.1
 ```
 
+---
+
+Метод **HEAD**
+
+Дословно - получить заголовки ответа
 
 ---
 
-Метод POST
+Метод **POST**
 
 основной метод для отправки данных на сервер (формы)
 
@@ -94,19 +104,12 @@ GET /foo.php?first_name=John&last_name=Doe&action=Submit HTTP/1.1
 множественный POST может создать множество обьектов
 
 ```
-POST /foo.php HTTP/1.1
-Host: localhost
-Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
-Referer: http://localhost/test.php
-Content-Type: application/x-www-form-urlencoded
-Content-Length: 43
-
-foo=bar
+http -v -a proweb -j POST https://api.github.com/repos/proweb/test-repo/issues title="Test post 1"
 ```
-
 ---
 
-Метод PUT
+Метод **PUT**
+
 для *обновления* существующего ресурса. В теле находятся данные для ресурса.
 
 Обновляет/переписывает данные по указанному URL
@@ -114,33 +117,33 @@ foo=bar
 
 ---
 
-DELETE: для удаления существующего ресурса.
-Пример - **Httpie**
+Остальные методы - ДЗ
 
-## Заголовки:
-[Заголовки запроса HTTP 1 - Стандарт](https://www.w3.org/Protocols/rfc2616/rfc2616-sec5.html#sec5.3)
+# Заголовки:
 
-Request
+[Заголовки запроса HTTP 1 - Стандарт](https://tools.ietf.org/html/rfc2068#section-5.3)
+
+Заголовки запроса = Ключ: Значение
+
 - Accept
+```
+Accept: */*
+```
 ```
 Accept: text/*, text/html, text/html;level=1, */*
 ```
-- Accept-Charset
-- Accept-Encoding
-- Accept-Language
-- Authorization
-- From
-- Host
-- If-Modified-Since
-- If-Match
-- If-None-Match
-- If-Range
-- If-Unmodified-Since
-- Max-Forwards
-- Proxy-Authorization
-- Range
-- Referer
-- User-Agent
+
+- Content-type (with body)
+```
+Content-Type: application/json
+```
+
+
+---
+
+Заголовки ответа
+[one](https://tools.ietf.org/html/rfc2068#section-6.2) и
+[two](https://tools.ietf.org/html/rfc2068#section-7.1)
 
 
 # Коды ответов:
@@ -157,6 +160,9 @@ access.log
 error.log
 
 # Ответ сервера
+
+Строка ответа идет в обратной последовательности,
+в отличие от строки запроса
 
 ```
 HTTP/1.x 200 OK
@@ -227,17 +233,14 @@ http --print=HB --json post https://ecstatic-jones-729032.netlify.com/ foo=bar
 
 
 # Resources [самостоятельное изучение]
+- [Httpie - консольная утилита](https://httpie.org/)
+- [Httpbin](http://httpbin.org/) - Сервис для тестирования запросов
+
+---
+
 - [HTTP протокол - справка MDN](https://developer.mozilla.org/ru/docs/Web/HTTP)
 - HTTP: The Protocol Every Web Developer Must Know [Part 1](https://code.tutsplus.com/ru/tutorials/http-the-protocol-every-web-developer-must-know-part-1--net-31177) и [Part 2](https://code.tutsplus.com/ru/tutorials/http-the-protocol-every-web-developer-must-know-part-2--net-31155)
-
 - [HTTP Status Codes in 60 Seconds](https://webdesign.tutsplus.com/tutorials/http-status-codes-in-60-seconds--cms-24317)
-
 - [HTTP Headers  для "чайников"](https://code.tutsplus.com/ru/tutorials/http-headers-for-dummies--net-8039)
 
 - [Введение в изучение и использование DNS-записей](http://prgssr.ru/development/vvedenie-v-izuchenie-i-ispolzovanie-dns-zapisej.html)
-
-- [Httpie - консольная утилита](https://httpie.org/)
-- [Httpbin](http://httpbin.org/)
-
-
-- https://stackoverflow.com/questions/107390/whats-the-difference-between-a-post-and-a-put-http-request
