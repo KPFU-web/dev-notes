@@ -241,5 +241,5 @@ http --print=HB --json post https://ecstatic-jones-729032.netlify.com/ foo=bar
 - HTTP: The Protocol Every Web Developer Must Know [Part 1](https://code.tutsplus.com/ru/tutorials/http-the-protocol-every-web-developer-must-know-part-1--net-31177) и [Part 2](https://code.tutsplus.com/ru/tutorials/http-the-protocol-every-web-developer-must-know-part-2--net-31155)
 - [HTTP Status Codes in 60 Seconds](https://webdesign.tutsplus.com/tutorials/http-status-codes-in-60-seconds--cms-24317)
 - [HTTP Headers  для "чайников"](https://code.tutsplus.com/ru/tutorials/http-headers-for-dummies--net-8039)
-
+- [HTTP Headers - The State of the Web - 31.10.2018(https://www.youtube.com/watch?v=riPSW5P127M)
 - [Введение в изучение и использование DNS-записей](http://prgssr.ru/development/vvedenie-v-izuchenie-i-ispolzovanie-dns-zapisej.html)

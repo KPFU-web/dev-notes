@@ -1,9 +1,7 @@
-# Новости для разработчиков
+# Инструментарий разработчика
 
-## Frontend
+## Консоль
+
+- [Scoop - command-line installer for Windows](https://scoop.sh/)
 
 
-
-## Backend
-
-- [Официальный сайт PHP](http://php.net/)
