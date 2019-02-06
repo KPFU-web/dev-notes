@@ -75,9 +75,6 @@ Tags: one-column, two-columns
 - `the_author()` – автор
 - `the_tags()` – теги
 
-# Теги условий
-
-
 
 # Подключение стилей и скриптов
 
@@ -132,8 +129,6 @@ Template Post Type: post, page, event
 */
 // Page code here...
 ```
-
-# Организация шаблона (папки и подпапки)
 
 
 # Виджеты
